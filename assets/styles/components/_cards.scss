@@ -89,11 +89,13 @@
 
             .job__skill-item {
                 @include text($text-filter , $s16, -0.12px, $bold);
+                @include size(fit-content, 3.2rem);
                 @include spacing(.5rem 1rem .3rem, unset);
-                @include size(fit-content, fit-content);
                 line-height: 2.4rem;
                 background-color: rgba($color: $text-filter, $alpha: .10);
+                border: none;
                 border-radius: .4rem;
+
             }
         }
     }
