@@ -1,0 +1,214 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "League Spartan", sans-serif;
+}
+
+header {
+  position: relative;
+  width: 100vw;
+  height: 15.6rem;
+  background: hsl(180, 29%, 50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100vw;
+  height: calc(100vh - 15.6rem);
+  padding: 7.6rem 16.5rem 12rem;
+  margin: unset;
+  background-color: hsl(180, 52%, 96%);
+}
+
+.job__card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+}
+.job__card-container .job__card {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4rem 3.2rem;
+  margin: unset;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: center;
+}
+.job__card-container .job__card .job__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  row-gap: unset;
+}
+.job__card-container .job__card .job__container .job__logo {
+  width: 8.8rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.job__card-container .job__card .job__container .job__data {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  -moz-column-gap: unset;
+       column-gap: unset;
+  row-gap: 1rem;
+}
+.job__card-container .job__card .job__container .job__data .job__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: unset;
+}
+.job__card-container .job__card .job__container .job__data .job__info .job__name {
+  color: hsl(180, 29%, 50%);
+  font-size: 1.8rem;
+  letter-spacing: normal;
+  font-weight: 700;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.job__card-container .job__card .job__container .job__data .job__info .job__badge-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+  row-gap: unset;
+}
+.job__card-container .job__card .job__container .job__data .job__info .job__badge-container .job__badge-item {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.4rem;
+  letter-spacing: -0.11px;
+  font-weight: 700;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.7rem 0.8rem 0.3rem;
+  margin: normal;
+  border-radius: 1.2rem;
+  text-transform: uppercase;
+  background-color: hsl(180, 29%, 50%);
+}
+.job__card-container .job__card .job__container .job__data .job__info .job__badge-container .--feat {
+  background-color: hsl(180, 14%, 20%);
+}
+.job__card-container .job__card .job__container .job__data .job__datails {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  -moz-column-gap: unset;
+       column-gap: unset;
+  row-gap: 0.7rem;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__position {
+  color: hsl(180, 14%, 20%);
+  font-size: 2.2rem;
+  letter-spacing: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: normal;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .job__featured-item {
+  color: hsl(180, 8%, 52%);
+  font-size: 1.8rem;
+  letter-spacing: -0.14px;
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .--divider::before {
+  content: "•";
+  padding: normal;
+  margin: 0 1.85rem;
+  opacity: 0.5;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .--divider::after {
+  content: "•";
+  padding: normal;
+  margin: 0 1.85rem;
+  opacity: 0.5;
+}
+.job__card-container .job__card .job__skills-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+  row-gap: unset;
+}
+.job__card-container .job__card .job__skills-list .job__skill-item {
+  color: hsl(180, 29%, 50%);
+  font-size: 1.6rem;
+  letter-spacing: -0.12px;
+  font-weight: 700;
+  padding: 0.5rem 1rem 0.3rem;
+  margin: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 2.4rem;
+  background-color: rgba(91, 164, 164, 0.1);
+  border-radius: 0.4rem;
+}/*# sourceMappingURL=style.css.map */

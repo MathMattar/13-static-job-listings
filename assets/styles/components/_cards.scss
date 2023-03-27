@@ -1,0 +1,100 @@
+@import '../base/mixins';
+@import '../base/variables';
+
+.job__card-container {
+    @include display(flex, column, nowrap, normal, normal, normal);
+
+    .job__card {
+        @include size(100%, fit-content);
+        @include spacing(4rem 3.2rem, unset);
+        @include display(flex, row, nowrap, normal, space-between, center);
+
+        .job__container {
+            @include display(flex, row, nowrap, normal, normal, normal);
+            @include gap (2.4rem, unset);
+
+            .job__logo {
+                @include size(8.8rem, fit-content);
+            }
+
+            .job__data {
+                @include display(flex, column, nowrap, normal, normal, normal);
+                @include gap (unset, 1rem);
+
+                .job__info {
+                    @include display(flex, row, nowrap, normal, normal, normal);
+                    @include gap (1.5rem, unset);
+
+                    .job__name {
+                        @include text($text-filter, $s18, normal, $bold);
+                        @include size(fit-content, fit-content);
+                    }
+
+                    .job__badge-container {
+                        @include display(flex, row, nowrap, normal, normal, normal);
+                        @include size(fit-content, fit-content);
+                        @include gap (.8rem, unset);
+
+                        .job__badge-item {
+                            @include text($white, $s14, -0.11px, $bold);
+                            @include size(fit-content, fit-content);
+                            @include spacing(.7rem .8rem .3rem, normal);
+                            border-radius: 1.2rem;
+                            text-transform: uppercase;
+                            background-color: $text-filter;
+                        }
+
+                        .--feat {
+                            background-color: $text-job;
+                        }
+                    }
+                }
+
+                .job__datails {
+                    @include display(flex, column, nowrap, normal, normal, normal);
+                    @include gap (unset, .7rem);
+
+                    .job__position {
+                        @include text($text-job, $s22, normal, $bold);
+                        line-height: 2.4rem;
+                    }
+
+                    .job__featured-container {
+                        @include display(flex, row, nowrap, normal, space-between, normal);
+
+                        .job__featured-item {
+                            @include text($text-features, $s18, -0.14px, $medium);
+                            line-height: 2.4rem;
+                        }
+
+                        .--divider::before {
+                            content: "•";
+                            @include spacing(normal, 0 1.85rem);
+                            opacity: .5;
+                        }
+
+                        .--divider::after {
+                            content: "•";
+                            @include spacing(normal, 0 1.85rem);
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+        }
+
+        .job__skills-list {
+            @include display(flex, row, nowrap, normal, normal, normal);
+            @include gap (1.6rem, unset);
+
+            .job__skill-item {
+                @include text($text-filter , $s16, -0.12px, $bold);
+                @include spacing(.5rem 1rem .3rem, unset);
+                @include size(fit-content, fit-content);
+                line-height: 2.4rem;
+                background-color: rgba($color: $text-filter, $alpha: .10);
+                border-radius: .4rem;
+            }
+        }
+    }
+}

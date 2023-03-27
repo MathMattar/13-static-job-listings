@@ -1,0 +1,37 @@
+@mixin text ($color, $size, $spacing, $weight) {
+    color: $color;
+    font-size: $size;
+    letter-spacing: $spacing;
+    font-weight: $weight;
+}
+
+@mixin size ($width, $heigth) {
+    width: $width;
+    height: $heigth;
+}
+
+@mixin spacing($padding, $margin){
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin display ($display, $direction, $wrap, $align-content, $justify-content, $align-items){
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-content: $align-content;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin gap($column, $row){
+    column-gap: $column;
+    row-gap: $row;
+}
+
+@mixin background($background, $repeat, $size, $position){
+    background: $background;
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
