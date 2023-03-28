@@ -33,7 +33,7 @@ header:after {
 
 main {
   width: 100vw;
-  height: calc(100vh - 15.6rem);
+  height: 100%;
   padding: 7.6rem 16.5rem 12rem;
   margin: unset;
   background-color: hsl(180, 52%, 96%);
@@ -46,19 +46,31 @@ main {
   align-content: normal;
   justify-content: normal;
   align-items: normal;
+  -moz-column-gap: unset;
+       column-gap: unset;
+  row-gap: 2.4rem;
+}
+.job__card-container .border {
+  border-left: 5px solid hsl(180, 29%, 50%);
 }
 .job__card-container .job__card {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 4rem 3.2rem;
-  margin: unset;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: normal;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4rem 3.2rem;
+  margin: unset;
+  background: hsl(0, 0%, 100%);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  box-shadow: 0 1.5rem 2rem -0.5rem hsla(189, 81%, 28%, 0.15);
+  border-radius: 0.5rem;
 }
 .job__card-container .job__card .job__container {
   display: flex;

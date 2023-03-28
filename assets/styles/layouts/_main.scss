@@ -2,7 +2,7 @@
 @import "../base/mixins";
 
 main {
-    @include size (100vw, calc(100vh - 15.6rem));
+    @include size (100vw, 100%);
     @include spacing(7.6rem 16.5rem 12rem, unset);
     background-color: $background;
 }

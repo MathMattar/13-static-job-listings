@@ -3,11 +3,19 @@
 
 .job__card-container {
     @include display(flex, column, nowrap, normal, normal, normal);
-
+    @include gap(unset, 2.4rem);
+    
+    .border {
+        border-left: 5px solid $text-filter;
+    }
+    
     .job__card {
+        @include display(flex, row, nowrap, normal, space-between, center);
         @include size(100%, fit-content);
         @include spacing(4rem 3.2rem, unset);
-        @include display(flex, row, nowrap, normal, space-between, center);
+        @include background($white, unset, unset, unset);
+        box-shadow: 0 1.5rem 2rem -.5rem hsla(189, 81%, 28%, 0.15);
+        border-radius: .5rem;
 
         .job__container {
             @include display(flex, row, nowrap, normal, normal, normal);
