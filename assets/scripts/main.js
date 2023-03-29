@@ -33,28 +33,27 @@ async function createCard() {
     divInfo.appendChild(h2);
 
     if (job.new || job.featured) {
-        const sectionBadge = document.createElement("section");
-        sectionBadge.className = "job__badge-container";
-        divInfo.appendChild(sectionBadge);
-      
-        if (job.new) {
-          const newBadge = document.createElement("p");
-          newBadge.className = "job__badge-item";
-          newBadge.textContent = "NEW!";
-          sectionBadge.appendChild(newBadge);
-        }
-      
-        if (job.featured) {
-          const featBadge = document.createElement("p");
-          featBadge.className = "job__badge-item --feat";
-          featBadge.textContent = "FEATURED";
-          sectionBadge.appendChild(featBadge);
-        }
+      const sectionBadge = document.createElement("section");
+      sectionBadge.className = "job__badge-container";
+      divInfo.appendChild(sectionBadge);
+
+      if (job.new) {
+        const newBadge = document.createElement("p");
+        newBadge.className = "job__badge-item";
+        newBadge.textContent = "NEW!";
+        sectionBadge.appendChild(newBadge);
       }
-      
+
+      if (job.featured) {
+        const featBadge = document.createElement("p");
+        featBadge.className = "job__badge-item --feat";
+        featBadge.textContent = "FEATURED";
+        sectionBadge.appendChild(featBadge);
+      }
+    }
 
     if (job.new && job.featured) {
-      li.classList.add("border");
+      li.classList.add("--border");
     }
 
     const divDetails = document.createElement("div");
@@ -93,7 +92,9 @@ async function createCard() {
 
     skillItems.forEach((skill) => {
       const button = document.createElement("button");
+      button.setAttribute("type", "button");
       button.className = "job__skill-item";
+      button.classList.add(skill);
       button.textContent = skill;
       nav.appendChild(button);
     });
