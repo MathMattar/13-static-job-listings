@@ -5,6 +5,7 @@ header {
     position: relative;
     @include size(100vw, 15.6rem);
     @include background($text-filter, no-repeat, 100% 100%, center);
+    z-index: -1;
     
     &:after {
         content: "";
@@ -13,5 +14,6 @@ header {
         right: 0;
         @include background(url(../images/bg-header-desktop.svg), no-repeat, 100% 100%, center);
         @include size(100%, 100%);
+        z-index: 0;
     }
 }

@@ -5,7 +5,7 @@
     @include display(flex, column, nowrap, normal, normal, normal);
     @include gap(unset, 2.4rem);
     
-    .border {
+    .--border {
         border-left: 5px solid $text-filter;
     }
     
@@ -14,7 +14,7 @@
         @include size(100%, fit-content);
         @include spacing(4rem 3.2rem, unset);
         @include background($white, unset, unset, unset);
-        box-shadow: 0 1.5rem 2rem -.5rem hsla(189, 81%, 28%, 0.15);
+        box-shadow: $shadow;
         border-radius: .5rem;
 
         .job__container {
@@ -99,11 +99,21 @@
                 @include text($text-filter , $s16, -0.12px, $bold);
                 @include size(fit-content, 3.2rem);
                 @include spacing(.5rem 1rem .3rem, unset);
+                @include background(rgba($color: $text-filter, $alpha: .10), unset, unset, unset);
                 line-height: 2.4rem;
-                background-color: rgba($color: $text-filter, $alpha: .10);
                 border: none;
                 border-radius: .4rem;
 
+                &:hover{
+                    color: $white;
+                    background-color: $text-filter;
+                }
+
+            }
+
+            .--active{
+                color: $white;
+                background-color: $text-filter;
             }
         }
     }
