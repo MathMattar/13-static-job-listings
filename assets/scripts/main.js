@@ -96,11 +96,37 @@ async function createCard() {
       button.className = "job__skill-item";
       button.classList.add(skill);
       button.textContent = skill;
+
+      // Adiciona o data-value de acordo com a habilidade correspondente
+      const values = {
+        Frontend: 0,
+        Backend: 1,
+        Fullstack: 2,
+        Junior: 3,
+        Midweight: 4,
+        Senior: 5,
+        HTML: 6,
+        CSS: 7,
+        JavaScript: 8,
+        Python: 9,
+        Ruby: 10,
+        React: 11,
+        Sass: 12,
+        Vue: 13,
+        Django: 14,
+        RoR: 15,
+      };
+
+      button.setAttribute("data-value", values[skill]);
+
       nav.appendChild(button);
     });
 
     jobList.appendChild(li);
   });
+
+  const creationCompleted = new Event("cardsCreated");
+  document.dispatchEvent(creationCompleted);
 }
 
 createCard();
