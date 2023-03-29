@@ -1,0 +1,36 @@
+@import '../base/mixins';
+@import '../base/variables';
+
+.filter {
+    @include display(flex, row, wrap, normal, normal, center);
+    @include gap (1.6rem, 1.6rem);
+    @include background($white, unset, unset, unset);
+    @include spacing(2rem 4rem, -11.2rem 0 4rem);
+    border-radius: .4rem;
+    box-shadow: $shadow;
+
+    .filter__card {
+        @include display(flex, row, nowrap, normal, space-between, center);
+        @include size(fit-content, fit-content);
+        @include background(rgba($color: $text-filter, $alpha: .10), unset, unset, unset);
+        border-radius: 0.4rem;
+
+        .filter__value {
+            @include text($text-filter , $s16, -0.12px, $bold);
+            @include spacing(1rem 1.2rem 1rem .8rem, unset);
+        }
+
+        .filter__remove {
+            @include background($text-filter, unset, unset, unset);
+            @include size(fit-content, fit-content);
+            @include spacing(.925rem, unset);
+            border: none;
+            border-top-right-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+
+            .remove__icon {
+                @include size(1.35rem, 1.35rem);
+            }
+        }
+    }
+}

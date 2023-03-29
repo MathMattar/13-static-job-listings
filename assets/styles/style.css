@@ -17,6 +17,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
+  z-index: -1;
 }
 header:after {
   content: "";
@@ -29,6 +30,7 @@ header:after {
   background-position: center;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 main {
@@ -37,6 +39,70 @@ main {
   padding: 7.6rem 16.5rem 12rem;
   margin: unset;
   background-color: hsl(180, 52%, 96%);
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+  row-gap: 1.6rem;
+  background: hsl(0, 0%, 100%);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  padding: 2rem 4rem;
+  margin: -11.2rem 0 4rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 1.5rem 2rem rgba(13, 113, 30, 0.15);
+}
+.filter .filter__card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgba(91, 164, 164, 0.1);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  border-radius: 0.4rem;
+}
+.filter .filter__card .filter__value {
+  color: hsl(180, 29%, 50%);
+  font-size: 1.6rem;
+  letter-spacing: -0.12px;
+  font-weight: 700;
+  padding: 1rem 1.2rem 1rem 0.8rem;
+  margin: unset;
+}
+.filter .filter__card .filter__remove {
+  background: hsl(180, 29%, 50%);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.925rem;
+  margin: unset;
+  border: none;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+.filter .filter__card .filter__remove .remove__icon {
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .job__card-container {
@@ -50,7 +116,7 @@ main {
        column-gap: unset;
   row-gap: 2.4rem;
 }
-.job__card-container .border {
+.job__card-container .--border {
   border-left: 5px solid hsl(180, 29%, 50%);
 }
 .job__card-container .job__card {
@@ -69,7 +135,7 @@ main {
   background-repeat: unset;
   background-size: unset;
   background-position: unset;
-  box-shadow: 0 1.5rem 2rem -0.5rem hsla(189, 81%, 28%, 0.15);
+  box-shadow: 0 1.5rem 2rem rgba(13, 113, 30, 0.15);
   border-radius: 0.5rem;
 }
 .job__card-container .job__card .job__container {
@@ -219,8 +285,19 @@ main {
   height: 3.2rem;
   padding: 0.5rem 1rem 0.3rem;
   margin: unset;
+  background: rgba(91, 164, 164, 0.1);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
   line-height: 2.4rem;
-  background-color: rgba(91, 164, 164, 0.1);
   border: none;
   border-radius: 0.4rem;
+}
+.job__card-container .job__card .job__skills-list .job__skill-item:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(180, 29%, 50%);
+}
+.job__card-container .job__card .job__skills-list .--active {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(180, 29%, 50%);
 }/*# sourceMappingURL=style.css.map */
