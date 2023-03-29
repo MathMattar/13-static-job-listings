@@ -105,6 +105,10 @@ main {
   height: 1.35rem;
 }
 
+.--hidden {
+  display: none;
+}
+
 .job__card-container {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 @import '../base/mixins';
 @import '../base/variables';
 
+
 .filter {
     @include display(flex, row, wrap, normal, normal, center);
     @include gap (1.6rem, 1.6rem);
@@ -33,4 +34,8 @@
             }
         }
     }
+}
+
+.--hidden {
+    display: none;
 }
