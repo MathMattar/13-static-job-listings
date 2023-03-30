@@ -1,13 +1,16 @@
 import getData from "./connectJson.js";
+import { filter } from "./filterList.js";
 
-const jobList = document.getElementById("job-list");
+const jobContainer = document.getElementById("job-list");
 
 async function createCard() {
   const data = await getData();
+  const jobList = [];
 
-  data.forEach((job) => {
+  data.forEach((job, index) => {
     const li = document.createElement("li");
     li.className = "job__card";
+    li.setAttribute("id", index);
 
     const divContainer = document.createElement("div");
     divContainer.className = "job__container";
@@ -94,39 +97,20 @@ async function createCard() {
       const button = document.createElement("button");
       button.setAttribute("type", "button");
       button.className = "job__skill-item";
-      button.classList.add(skill);
       button.textContent = skill;
-
-      // Adiciona o data-value de acordo com a habilidade correspondente
-      const values = {
-        Frontend: 0,
-        Backend: 1,
-        Fullstack: 2,
-        Junior: 3,
-        Midweight: 4,
-        Senior: 5,
-        HTML: 6,
-        CSS: 7,
-        JavaScript: 8,
-        Python: 9,
-        Ruby: 10,
-        React: 11,
-        Sass: 12,
-        Vue: 13,
-        Django: 14,
-        RoR: 15,
-      };
-
-      button.setAttribute("data-value", values[skill]);
 
       nav.appendChild(button);
     });
 
-    jobList.appendChild(li);
+    jobContainer.appendChild(li);
+    jobList.push(li);
   });
+
+  console.log(jobList);
 
   const creationCompleted = new Event("cardsCreated");
   document.dispatchEvent(creationCompleted);
 }
 
 createCard();
+filter();
