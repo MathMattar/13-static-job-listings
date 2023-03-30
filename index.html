@@ -20,30 +20,14 @@
 <body>
     <header></header>
     <main>
-        <ul class="filter --hidden" id="filter"></ul>
-        <!-- <li class="filter__card">
-                <p class="filter__value">
-                    HTML
-                </p>
-
-                <button class="filter__remove">
-                    <img class="remove__icon" src="./assets/images/icon-remove.svg" alt="">
-                </button>
-            </li>
-            <li class="filter__card">
-                <p class="filter__value">
-                    CSS
-                </p>
-
-                <button class="filter__remove">
-                    <img class="remove__icon" src="./assets/images/icon-remove.svg" alt="">
-                </button>
-            </li>-->
+        <section class="filter --hidden" id="filter-container">
+            <ul class="filter__list" id="filter-list"></ul>
+            <button class="filter__clear" id="clear-button" type="button">Clear</button>
+        </section>
         <ul class="job__card-container" id="job-list"></ul>
     </main>
 
     <script src="./assets/scripts/main.js" type="module"></script>
-    <script src="./assets/scripts/filterList.js"></script>
 
 </body>
 
