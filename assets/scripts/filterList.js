@@ -1,61 +1,72 @@
-export function filter() {
+import applyFilter from "./filter.js";
+
+// Função responsável por adicionar os listeners dos botões de filtro e limpar
+export default function filter() {
   document.addEventListener("cardsCreated", () => {
-    const btns = document.querySelectorAll(".job__skill-item");
-    const filterSection = document.getElementById("filter-container");
+    const skillItem = document.querySelectorAll(".job__skill-item");
     const filterContainer = document.getElementById("filter-list");
+    const filterSection = document.getElementById("filter-container");
     const btnClear = document.getElementById("clear-button");
     const filterList = [];
 
-    btns.forEach((btn, index) => {
-      btn.addEventListener("click", (e) => {
+    // Adicione um event listener para cada botão de filtro
+    skillItem.forEach((item, index) => {
+      item.addEventListener("click", (e) => {
         e.preventDefault();
-
-        const btnValue = e.target.textContent;
-
+        const itemValue = e.target.textContent;
         filterSection.classList.remove("--hidden");
 
-        if (!filterList.includes(btnValue)) {
-          const li = document.createElement("li");
-          li.className = "filter__card";
-          li.setAttribute("id", index);
-          filterContainer.appendChild(li);
+        // Cria novos cards e verifica os existentes afim de impossibilitar duplicidade
+        if (!filterList.includes(itemValue)) {
+          const filterCard = document.createElement("li");
+          filterCard.className = "filter__card";
+          filterCard.setAttribute("id", index);
+          filterContainer.appendChild(filterCard);
 
-          const p = document.createElement("p");
-          p.textContent = btnValue;
-          p.className = "filter__value";
-          li.appendChild(p);
+          const filterSkill = document.createElement("p");
+          filterSkill.textContent = itemValue;
+          filterSkill.className = "filter__value";
+          filterCard.appendChild(filterSkill);
 
-          const buttons = document.createElement("button");
-          buttons.className = "filter__remove";
-          li.appendChild(buttons);
+          const removeFilter = document.createElement("button");
+          removeFilter.className = "filter__remove";
+          filterCard.appendChild(removeFilter);
 
-          const image = document.createElement("img");
-          image.src = "./assets/images/icon-remove.svg";
-          image.alt = "Close icon";
-          image.className = "remove__icon";
-          buttons.appendChild(image);
+          const removeIcon = document.createElement("img");
+          removeIcon.src = "../assets/images/icon-remove.svg";
+          removeIcon.alt = "Close icon";
+          removeIcon.className = "remove__icon";
+          removeFilter.appendChild(removeIcon);
 
-          filterList.push(btnValue);
+          filterList.push(itemValue);
 
-          buttons.addEventListener("click", () => {
-            li.remove();
-            filterList.splice(filterList.indexOf(btnValue), 1);
+          // Adicione um listener para o botão que exclui o filtro pai
+          removeFilter.addEventListener("click", () => {
+            filterCard.remove();
+            filterList.splice(filterList.indexOf(itemValue), 1);
 
             if (filterList.length === 0) {
               filterSection.classList.add("--hidden");
             }
-            console.log(filterList);
-          });
 
-          btnClear.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            filterList.splice(0, filterList.length);
-            filterContainer.innerHTML = "";
-            filterSection.classList.add("--hidden");
+            applyFilter(filterList);
           });
         }
+
+        applyFilter(filterList);
       });
+    });
+
+    // Adicione um listener para o botão que exclui todos os filtros
+    btnClear.addEventListener("click", () => {
+      filterList.length = 0;
+      const filterCards = document.querySelectorAll(".filter__card");
+      filterCards.forEach((card) => {
+        card.remove();
+      });
+
+      filterSection.classList.add("--hidden");
+      applyFilter(filterList);
     });
   });
 }
