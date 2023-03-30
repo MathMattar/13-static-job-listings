@@ -1,26 +1,28 @@
 import getData from "./connectJson.js";
-import { filter } from "./filterList.js";
+import filter from "./filterList.js";
 
 const jobContainer = document.getElementById("job-list");
 
+// Função responsável por criar os elementos HTML
 async function createCard() {
   const data = await getData();
   const jobList = [];
 
+  // Faz um loop através de cada item da resposta do arquivo JSON
   data.forEach((job, index) => {
-    const li = document.createElement("li");
-    li.className = "job__card";
-    li.setAttribute("id", index);
+    const card = document.createElement("li");
+    card.className = "job__card";
+    card.setAttribute("id", index);
 
     const divContainer = document.createElement("div");
     divContainer.className = "job__container";
-    li.appendChild(divContainer);
+    card.appendChild(divContainer);
 
-    const img = document.createElement("img");
-    img.src = job.logo;
-    img.alt = job.company;
-    img.className = "job__logo";
-    divContainer.appendChild(img);
+    const logo = document.createElement("img");
+    logo.src = job.logo;
+    logo.alt = job.company;
+    logo.className = "job__logo";
+    divContainer.appendChild(logo);
 
     const divData = document.createElement("div");
     divData.className = "job__data";
@@ -30,11 +32,12 @@ async function createCard() {
     divInfo.className = "job__info";
     divData.appendChild(divInfo);
 
-    const h2 = document.createElement("h2");
-    h2.className = "job__name";
-    h2.textContent = job.company;
-    divInfo.appendChild(h2);
+    const company = document.createElement("h2");
+    company.className = "job__name";
+    company.textContent = job.company;
+    divInfo.appendChild(company);
 
+    // Verifica de contém e adiciona badges
     if (job.new || job.featured) {
       const sectionBadge = document.createElement("section");
       sectionBadge.className = "job__badge-container";
@@ -55,27 +58,28 @@ async function createCard() {
       }
     }
 
+    // Adiciona borda para destacar as vagas que contém os badges
     if (job.new && job.featured) {
-      li.classList.add("--border");
+      card.classList.add("--border");
     }
 
     const divDetails = document.createElement("div");
-    divDetails.className = "job__datails";
+    divDetails.className = "job__details";
     divData.appendChild(divDetails);
 
-    const h1 = document.createElement("h1");
-    h1.className = "job__position";
-    h1.textContent = job.position;
-    divDetails.appendChild(h1);
+    const position = document.createElement("h1");
+    position.className = "job__position";
+    position.textContent = job.position;
+    divDetails.appendChild(position);
 
     const section = document.createElement("section");
     section.className = "job__featured-container";
     divDetails.appendChild(section);
 
-    const date = document.createElement("p");
-    date.className = "job__featured-item";
-    date.textContent = job.postedAt;
-    section.appendChild(date);
+    const postDate = document.createElement("p");
+    postDate.className = "job__featured-item";
+    postDate.textContent = job.postedAt;
+    section.appendChild(postDate);
 
     const divider = document.createElement("p");
     divider.className = "job__featured-item --divider";
@@ -91,23 +95,24 @@ async function createCard() {
     nav.className = "job__skills-list";
     li.appendChild(nav);
 
+    // Cria uma lista de habilidades necessárias para a vaga
     const skillItems = [job.role, job.level, ...job.languages, ...job.tools];
 
+    // Faz um loop em cada habilidade e cria um botão para cada uma
     skillItems.forEach((skill) => {
-      const button = document.createElement("button");
-      button.setAttribute("type", "button");
-      button.className = "job__skill-item";
-      button.textContent = skill;
+      const skillItem = document.createElement("button");
+      skillItem.setAttribute("type", "button");
+      skillItem.className = "job__skill-item";
+      skillItem.textContent = skill;
 
-      nav.appendChild(button);
+      nav.appendChild(skillItem);
     });
 
-    jobContainer.appendChild(li);
-    jobList.push(li);
+    jobContainer.appendChild(card);
+    jobList.push(card);
   });
 
-  console.log(jobList);
-
+  // Cria um novo evento para indicar que os elementos foram criados
   const creationCompleted = new Event("cardsCreated");
   document.dispatchEvent(creationCompleted);
 }
