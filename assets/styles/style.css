@@ -44,6 +44,23 @@ main {
 .filter {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  padding: 2rem 4rem;
+  margin: -11.2rem 0 4rem;
+  background: hsl(0, 0%, 100%);
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1.5rem 2rem rgba(13, 113, 30, 0.15);
+}
+.filter .filter__list {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: normal;
   justify-content: normal;
@@ -51,16 +68,11 @@ main {
   -moz-column-gap: 1.6rem;
        column-gap: 1.6rem;
   row-gap: 1.6rem;
-  background: hsl(0, 0%, 100%);
-  background-repeat: unset;
-  background-size: unset;
-  background-position: unset;
-  padding: 2rem 4rem;
-  margin: -11.2rem 0 4rem;
+  width: 100%;
+  height: 100%;
   border-radius: 0.4rem;
-  box-shadow: 0 1.5rem 2rem rgba(13, 113, 30, 0.15);
 }
-.filter .filter__card {
+.filter .filter__list .filter__card {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -76,8 +88,9 @@ main {
   background-size: unset;
   background-position: unset;
   border-radius: 0.4rem;
+  cursor: pointer;
 }
-.filter .filter__card .filter__value {
+.filter .filter__list .filter__card .filter__value {
   color: hsl(180, 29%, 50%);
   font-size: 1.6rem;
   letter-spacing: -0.12px;
@@ -85,7 +98,7 @@ main {
   padding: 1rem 1.2rem 1rem 0.8rem;
   margin: unset;
 }
-.filter .filter__card .filter__remove {
+.filter .filter__list .filter__card .filter__remove {
   background: hsl(180, 29%, 50%);
   background-repeat: unset;
   background-size: unset;
@@ -99,10 +112,30 @@ main {
   border: none;
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
+  cursor: pointer;
 }
-.filter .filter__card .filter__remove .remove__icon {
+.filter .filter__list .filter__card .filter__remove .remove__icon {
   width: 1.35rem;
   height: 1.35rem;
+}
+.filter .filter__list .filter__card .filter__remove:hover {
+  background-color: hsl(180, 14%, 20%);
+}
+.filter .filter__clear {
+  color: hsl(180, 8%, 52%);
+  font-size: 1.6rem;
+  letter-spacing: -0.12px;
+  font-weight: 700;
+  background: transparent;
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  border: none;
+  cursor: pointer;
+}
+.filter .filter__clear:hover {
+  color: hsl(180, 29%, 50%);
+  text-decoration: underline;
 }
 
 .--hidden {
@@ -240,6 +273,10 @@ main {
   letter-spacing: normal;
   font-weight: 700;
   line-height: 2.4rem;
+  cursor: pointer;
+}
+.job__card-container .job__card .job__container .job__data .job__datails .job__position:hover {
+  color: hsl(180, 29%, 50%);
 }
 .job__card-container .job__card .job__container .job__data .job__datails .job__featured-container {
   display: flex;
@@ -296,6 +333,7 @@ main {
   line-height: 2.4rem;
   border: none;
   border-radius: 0.4rem;
+  cursor: pointer;
 }
 .job__card-container .job__card .job__skills-list .job__skill-item:hover {
   color: hsl(0, 0%, 100%);
