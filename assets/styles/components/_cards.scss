@@ -58,7 +58,7 @@
                     }
                 }
 
-                .job__datails {
+                .job__details {
                     @include display(flex, column, nowrap, normal, normal, normal);
                     @include gap (unset, .7rem);
 
