@@ -93,7 +93,7 @@ async function createCard() {
 
     const nav = document.createElement("nav");
     nav.className = "job__skills-list";
-    li.appendChild(nav);
+    card.appendChild(nav);
 
     // Cria uma lista de habilidades necessárias para a vaga
     const skillItems = [job.role, job.level, ...job.languages, ...job.tools];
