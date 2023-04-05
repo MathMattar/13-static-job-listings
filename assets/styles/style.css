@@ -257,7 +257,7 @@ main {
 .job__card-container .job__card .job__container .job__data .job__info .job__badge-container .--feat {
   background-color: hsl(180, 14%, 20%);
 }
-.job__card-container .job__card .job__container .job__data .job__datails {
+.job__card-container .job__card .job__container .job__data .job__details {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -268,7 +268,7 @@ main {
        column-gap: unset;
   row-gap: 0.7rem;
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__position {
+.job__card-container .job__card .job__container .job__data .job__details .job__position {
   color: hsl(180, 14%, 20%);
   font-size: 2.2rem;
   letter-spacing: normal;
@@ -276,10 +276,10 @@ main {
   line-height: 2.4rem;
   cursor: pointer;
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__position:hover {
+.job__card-container .job__card .job__container .job__data .job__details .job__position:hover {
   color: hsl(180, 29%, 50%);
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container {
+.job__card-container .job__card .job__container .job__data .job__details .job__featured-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -287,20 +287,20 @@ main {
   justify-content: space-between;
   align-items: normal;
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .job__featured-item {
+.job__card-container .job__card .job__container .job__data .job__details .job__featured-container .job__featured-item {
   color: hsl(180, 8%, 52%);
   font-size: 1.8rem;
   letter-spacing: -0.14px;
   font-weight: 500;
   line-height: 2.4rem;
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .--divider::before {
+.job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::before {
   content: "•";
   padding: normal;
   margin: 0 1.85rem;
   opacity: 0.5;
 }
-.job__card-container .job__card .job__container .job__data .job__datails .job__featured-container .--divider::after {
+.job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::after {
   content: "•";
   padding: normal;
   margin: 0 1.85rem;
