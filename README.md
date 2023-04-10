@@ -27,12 +27,6 @@ Este projeto consiste em uma lista de vagas de emprego estáticas, onde o usuár
 
 <br/>
 
-<p style="text-align:center;">
-    <img width="375px" src="./assets/presentation/mobile-filter.png" />
-</p>
-
-<br/>
-
 ## Links
 
 - [Lista de Vagas de Emprego Estáticas](https://13-static-job-listings.vercel.app)
