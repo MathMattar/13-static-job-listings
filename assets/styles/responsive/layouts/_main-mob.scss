@@ -2,8 +2,5 @@
 @import "../../base/mixins";
 
 main {
-    @include size (100vw, 100%);
     @include spacing(5.6rem 2.4rem, unset);
-    background-color: $background;
-    min-height: calc(100vh - 15.6rem);
 }
