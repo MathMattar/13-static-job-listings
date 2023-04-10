@@ -58,6 +58,7 @@ main {
   width: 100%;
   height: 100%;
   box-shadow: 0 1.5rem 2rem rgba(13, 113, 30, 0.15);
+  border-radius: 0.4rem;
 }
 .filter .filter__list {
   display: flex;
@@ -294,15 +295,10 @@ main {
   font-weight: 500;
   line-height: 2.4rem;
 }
-.job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::before {
-  content: "•";
-  padding: normal;
-  margin: 0 1.85rem;
-  opacity: 0.5;
-}
+.job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::before,
 .job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::after {
   content: "•";
-  padding: normal;
+  padding: unset;
   margin: 0 1.85rem;
   opacity: 0.5;
 }
@@ -343,4 +339,72 @@ main {
 .job__card-container .job__card .job__skills-list .--active {
   color: hsl(0, 0%, 100%);
   background-color: hsl(180, 29%, 50%);
+}
+
+main {
+  width: 100vw;
+  height: 100%;
+  padding: 5.6rem 2.4rem;
+  margin: unset;
+  background-color: hsl(180, 52%, 96%);
+  min-height: calc(100vh - 15.6rem);
+}
+
+@media only screen and (max-width: 1024px) {
+  .job__card-container {
+    -moz-column-gap: unset;
+         column-gap: unset;
+    row-gap: 4rem;
+  }
+  .job__card-container .job__card {
+    flex-direction: column;
+    padding: 3.2rem 2.4rem 2.4rem;
+    margin: unset;
+  }
+  .job__card-container .job__card .job__container {
+    padding: 0 0 1.5rem 0;
+    margin: unset;
+    flex-direction: column;
+    width: 100%;
+  }
+  .job__card-container .job__card .job__container .job__logo {
+    width: 4.8rem;
+    padding: unset;
+    margin: -5.6rem 0 0.8rem;
+  }
+  .job__card-container .job__card .job__container .job__data .job__info .job__name {
+    font-size: 1.3rem;
+    padding: 0 3.3rem 0 0;
+    margin: unset;
+  }
+  .job__card-container .job__card .job__container .job__data .job__details .job__position {
+    font-size: 1.5rem;
+  }
+  .job__card-container .job__card .job__container .job__data .job__details .job__featured-container {
+    justify-content: normal;
+    border-bottom: 1px solid rgba(44, 58, 58, 0.7);
+  }
+  .job__card-container .job__card .job__container .job__data .job__details .job__featured-container .job__featured-item {
+    padding: 0 0 1.5rem 0;
+    margin: unset;
+    font-size: 1.6rem;
+    letter-spacing: -0.12px;
+  }
+  .job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::before,
+  .job__card-container .job__card .job__container .job__data .job__details .job__featured-container .--divider::after {
+    padding: unset;
+    margin: 0 1rem;
+  }
+  .job__card-container .job__card .job__skills-list {
+    flex-wrap: wrap;
+    -moz-column-gap: 1.6rem;
+         column-gap: 1.6rem;
+    row-gap: 1.6rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .filter {
+    padding: 2rem 2.5rem 2rem 2rem;
+    margin: -9.2rem 0 5.6rem;
+  }
 }/*# sourceMappingURL=style.css.map */

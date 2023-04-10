@@ -67,7 +67,7 @@
                         line-height: 2.4rem;
                         cursor: pointer;
 
-                        &:hover{
+                        &:hover {
                             color: $text-filter;
                         }
                     }
@@ -80,17 +80,13 @@
                             line-height: 2.4rem;
                         }
 
-                        .--divider::before {
+                        .--divider::before,
+                        .--divider::after {
                             content: "•";
-                            @include spacing(normal, 0 1.85rem);
+                            @include spacing(unset, 0 1.85rem);
                             opacity: .5;
                         }
 
-                        .--divider::after {
-                            content: "•";
-                            @include spacing(normal, 0 1.85rem);
-                            opacity: .5;
-                        }
                     }
                 }
             }

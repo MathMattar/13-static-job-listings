@@ -5,3 +5,6 @@
 @use './layouts/main';
 @use './components/filter';
 @use './components/cards';
+@use './responsive/layouts/main-mob';
+@use './responsive/components/cards-mob';
+@use './responsive/components/filter-mob';
