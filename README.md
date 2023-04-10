@@ -22,14 +22,20 @@ Este projeto consiste em uma lista de vagas de emprego estáticas, onde o usuár
 ## Screenshot
 
 <p style="text-align:center;">
-    <img width="375px" src="./assets/images/screenshot.png"></img>
+    <img width="1440px" src="./assets/presentation/desktop.png" />
+</p>
+
+<br/>
+
+<p style="text-align:center;">
+    <img width="375px" src="./assets/presentation/mobile-filter.png" />
 </p>
 
 <br/>
 
 ## Links
 
-- [Lista de Vagas de Emprego Estáticas]()
+- [Lista de Vagas de Emprego Estáticas](https://13-static-job-listings.vercel.app)
 
 <br/>
 
