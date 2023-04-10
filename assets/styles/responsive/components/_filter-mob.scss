@@ -1,0 +1,8 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+@media only screen and (max-width: 1024px) {
+    .filter{
+        @include spacing(2rem 2.5rem 2rem 2rem, -9.2rem 0 5.6rem);
+    }
+}
