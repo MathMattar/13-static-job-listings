@@ -1,0 +1,62 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+@media only screen and (max-width: 1024px) {
+
+    .job__card-container {
+        @include gap (unset, 4rem);
+
+        .job__card {
+            flex-direction: column;
+            @include spacing(3.2rem 2.4rem 2.4rem, unset);
+
+            .job__container {
+                @include spacing (0 0 1.5rem 0, unset);
+                flex-direction: column;
+                width: 100%;
+
+                .job__logo {
+                    width: 4.8rem;
+                    @include spacing(unset, -5.6rem 0 .8rem);
+                }
+
+                .job__data {
+                    .job__info {
+                        .job__name {
+                            font-size: $s13;
+                            @include spacing(0 3.3rem 0 0, unset)
+                        }
+                    }
+
+                    .job__details {
+                        .job__position {
+                            font-size: $s15;
+                        }
+
+                        .job__featured-container {
+                            justify-content: normal;
+                            border-bottom: 1px solid rgba($color: $text-job, $alpha: 0.7);
+
+                            .job__featured-item {
+                                @include spacing(0 0 1.5rem 0, unset);
+                                font-size: $s16;
+                                letter-spacing: -0.12px;
+                            }
+
+                            .--divider::before,
+                            .--divider::after {
+                                @include spacing(unset, 0 1rem);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .job__skills-list {
+                flex-wrap: wrap;
+                @include gap (1.6rem, 1.6rem);
+            }
+        }
+    }
+
+}
