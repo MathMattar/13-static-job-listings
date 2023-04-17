@@ -15,7 +15,7 @@
 
 # Resumo
 
-Este projeto consiste em uma lista de vagas de emprego estáticas, onde o usuário pode visualizar informações sobre cada vaga, como a empresa contratante, a localização, o tipo de emprego e as habilidades necessárias. É possível aplicar filtros por habilidades ou localizações, facilitando a busca por vagas que se encaixem no perfil do usuário. Com uma interface amigável e fácil de usar, o projeto oferece uma experiência de usuário agradável e intuitiva.
+Este projeto consiste em uma lista de vagas de emprego estáticas, onde o usuário pode visualizar informações sobre cada vaga, como a empresa contratante, a localização, o tipo de emprego e as habilidades necessárias. É possível aplicar filtros por habilidades, facilitando a busca por vagas que se encaixem no perfil do usuário. Com uma interface amigável e fácil de usar, o projeto oferece uma experiência de usuário agradável e intuitiva.
 
 <br/>
 
